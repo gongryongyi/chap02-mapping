@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmbeddedKeyTests {
+
     private static EntityManagerFactory entityManagerFactory;
 
     private EntityManager entityManager;
@@ -35,10 +36,10 @@ public class EmbeddedKeyTests {
     }
 
     @Test
-    public void 임베디드_아이디_사용한_복합키_테이블_매핑_테스트() {
+    public void 임베디드_아이디_사용한_복합키_테이블_매핑_테스트(){
         //given
         Member member = new Member();
-        member.setMemberPK(new MemberPK(1, "user01"));
+        member.setMemberPk(new MemberPk(1, "user01"));
         member.setPhone("010-1234-5678");
         member.setAddress("서울시 종로구");
         //when
@@ -47,21 +48,9 @@ public class EmbeddedKeyTests {
         entityManager.persist(member);
         entityTransaction.commit();
         //then
-        Member foundMember = entityManager.find(Member.class, member.getMemberPK());
-        assertEquals(member.getMemberPK(), foundMember.getMemberPK());
+        Member foundMember = entityManager.find(Member.class, member.getMemberPk());
+        assertEquals(member.getMemberPk(), foundMember.getMemberPk());
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

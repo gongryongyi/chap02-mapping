@@ -7,14 +7,17 @@ import java.util.Date;
 @Table(name="tbl_member_section03_subsection02")
 @TableGenerator(
         name = "member_seq_table_generator",
-        table = "tbl_my_sequences",
-        pkColumnName = "my_seq_member_no"
+        table = "tbl_my_sequences",  // 테이블 명칭
+        pkColumnName = "my_seq_member_no" //사용할 PrimaryKey의 이름
+
 )
+
 public class Member {
     @Id
     @Column(name="member_no")
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "member_seq_table_generator")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "member_seq_table_generator") //테이블을 이용해서 하겠다 라는 전략
     private int memberNo;
+
     @Column(name="member_id")
     private String memberId;
     @Column(name="member_pwd")

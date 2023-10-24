@@ -1,5 +1,6 @@
 package com.ohgiraffers.section04.enumtype;
 
+
 import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;
@@ -35,7 +36,7 @@ public class EnumTypeMappingTests {
     }
 
     @Test
-    public void enum_타입_매핑_테스트() {
+    public void 타입_매핑_테스트() {
         //given
         Member member = new Member();
         member.setMemberNo(1);

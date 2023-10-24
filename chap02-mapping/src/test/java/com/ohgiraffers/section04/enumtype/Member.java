@@ -24,8 +24,8 @@ public class Member {
     @Column(name="enroll_date")
     private Date enrollDate;
     @Column(name="member_role")
-    //@Enumerated(EnumType.ORDINAL)   // enum을 상수 값 사용한다는 의미 - 기본 값
-    @Enumerated(EnumType.STRING)    // enum을 문자 값 사용한다는 의미
+    @Enumerated(EnumType.ORDINAL)  // enum을 상수 값 사용한다는 의미 - 기본 값 이므로 생략해도 똑같이 동작하긴 함
+    //@Enumerated(EnumType.STRING)  // enum을 문자 값 사용한다는 의미
     private RoleType memberRole;
     @Column(name="status")
     private String status;

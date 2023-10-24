@@ -1,11 +1,11 @@
 package com.ohgiraffers.section05.access.subsection01.field;
 
+
 import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -45,7 +45,7 @@ public class FieldAccessTests {
         //when
         entityManager.persist(member);
         //then
-        Member foundMember = entityManager.find(Member.class, member.getMemberNo());
+       Member foundMember = entityManager.find(Member.class, member.getMemberNo());
         assertEquals(member.getMemberNo(), foundMember.getMemberNo());
     }
 }

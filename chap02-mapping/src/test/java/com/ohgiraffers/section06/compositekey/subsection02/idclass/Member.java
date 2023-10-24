@@ -2,9 +2,9 @@ package com.ohgiraffers.section06.compositekey.subsection02.idclass;
 
 import javax.persistence.*;
 
-@Entity(name="member_section06_subsection02")
-@Table(name="tbl_member_section06_subsection02")
-@IdClass(MemberPK.class)
+@Entity(name = "member_section06_subsection02")
+@Table(name = "tbl_member_section06_subsection02")
+@IdClass(MemberPk.class)
 public class Member {
 
     @Id
@@ -15,10 +15,10 @@ public class Member {
     @Column(name = "member_id")
     private String memberId;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
 
     public Member() {

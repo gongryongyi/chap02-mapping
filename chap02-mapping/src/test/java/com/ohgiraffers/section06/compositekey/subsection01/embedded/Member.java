@@ -5,34 +5,33 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity(name="member_section06_subsection01")
-@Table(name="tbl_member_section06_subsection01")
+@Entity(name = "member_section06_subsection01")
+@Table(name = "tbl_member_section06_subsection01")
 public class Member {
-
     @EmbeddedId
-    private MemberPK memberPK;
+    private MemberPk memberPk;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
 
     public Member() {
     }
 
-    public Member(MemberPK memberPK, String phone, String address) {
-        this.memberPK = memberPK;
+    public Member(MemberPk memberPk, String phone, String address) {
+        this.memberPk = memberPk;
         this.phone = phone;
         this.address = address;
     }
 
-    public MemberPK getMemberPK() {
-        return memberPK;
+    public MemberPk getMemberPk() {
+        return memberPk;
     }
 
-    public void setMemberPK(MemberPK memberPK) {
-        this.memberPK = memberPK;
+    public void setMemberPk(MemberPk memberPk) {
+        this.memberPk = memberPk;
     }
 
     public String getPhone() {
@@ -54,7 +53,7 @@ public class Member {
     @Override
     public String toString() {
         return "Member{" +
-                "memberPK=" + memberPK +
+                "memberPk=" + memberPk +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 '}';

@@ -1,16 +1,22 @@
-package com.ohgiraffers.section06.compositekey.subsection02.idclass;
+package com.ohgiraffers.section06.compositekey.subsection01.embedded;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 /* 복합키 클래스는 반드시 직렬화 처리, equals&hashcode 오버라이딩 */
-public class MemberPK implements Serializable {
+@Embeddable  //이 클래스가 포함 될 수 있다.
+public class MemberPk implements Serializable {  //복합키에 대한 대응 클래스
+
+    @Column(name="member_no")
     private int memberNo;
+    @Column(name = "member_id")
     private String memberId;
 
-    public MemberPK() {
+    public MemberPk() {
     }
 
-    public MemberPK(int memberNo, String memberId) {
+    public MemberPk(int memberNo, String memberId) {
         this.memberNo = memberNo;
         this.memberId = memberId;
     }
@@ -35,8 +41,8 @@ public class MemberPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MemberPK memberPK = (MemberPK) o;
-        return memberNo == memberPK.memberNo && Objects.equals(memberId, memberPK.memberId);
+        MemberPk memberPk = (MemberPk) o;
+        return memberNo == memberPk.memberNo && Objects.equals(memberId, memberPk.memberId);
     }
 
     @Override
@@ -46,7 +52,7 @@ public class MemberPK implements Serializable {
 
     @Override
     public String toString() {
-        return "MemberPK{" +
+        return "MemberPk{" +
                 "memberNo=" + memberNo +
                 ", memberId='" + memberId + '\'' +
                 '}';

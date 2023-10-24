@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IdClassTests {
+
     private static EntityManagerFactory entityManagerFactory;
 
     private EntityManager entityManager;
@@ -35,7 +36,7 @@ public class IdClassTests {
     }
 
     @Test
-    public void 아이디_클래스_사용한_복합키_테이블_매핑_테스트() {
+    public void 아이디_클래스_사용한_복합키_테이블_매핑_테스트(){
         //given
         Member member = new Member();
         member.setMemberNo(1);
@@ -48,21 +49,9 @@ public class IdClassTests {
         entityManager.persist(member);
         entityTransaction.commit();
         //then
-        Member foundMember = entityManager.find(Member.class, new MemberPK(1, "user01"));
+        Member foundMember = entityManager.find(Member.class, new MemberPk(1, "user01"));
         assertEquals(member, foundMember);
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

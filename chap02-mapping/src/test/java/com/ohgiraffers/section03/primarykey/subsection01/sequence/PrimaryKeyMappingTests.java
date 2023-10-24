@@ -2,6 +2,7 @@ package com.ohgiraffers.section03.primarykey.subsection01.sequence;
 
 
 import org.junit.jupiter.api.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -67,17 +68,3 @@ public class PrimaryKeyMappingTests {
         memberNoList.forEach(System.out::println);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -14,18 +14,18 @@ public class Member {
     @Column(name="member_pwd")
     private String memberPwd;
     @Column(name="nickname")
-    @Transient
+    @Transient  // 테이블과의 매핑에서 (nickname)무시하겠다
     private String nickname;
-    @Column(name="phone", columnDefinition = "varchar2(200) default '010-0000-0000'")
+    @Column(name="phone", columnDefinition = "varchar2(200) default '010-0000-0000'")  // columnDefinition = 그 컬럼을 내가 이렇게 설정하겠습니다. (속성 설정)
     private String phone;
-    @Column(name="email", unique = true)
+    @Column(name="email", unique = true)  //unique = 이메일은 반드시 고유값이여야 한다.
     private String email;
-    @Column(name="address", nullable = false)
+    @Column(name="address", nullable = false)  //nullable = 반드시 입력되야한다.
     private String address;
     @Column(name="enroll_date")
-    @Temporal(TemporalType.TIMESTAMP)   // DATE + TIME : 날짜 및 시간
-    //@Temporal(TemporalType.DATE)        // 오라클에서는 TIMESTAMP와 동일
-    //@Temporal(TemporalType.TIME)        // 1970/01/01에 시간만 맞게 나옴
+    @Temporal(TemporalType.TIMESTAMP)  // DATE + TIME : 날짜 및 시간
+    //@Temporal(TemporalType.DATE) // 오라클에서는 TIMESTAMP와 동일
+    //@Temporal(TemporalType.TIME)  // 1970/01/01에 시간만 맞게 나옴 즉 날짜는 다루지 않고 시간만 다루겠다.
     private Date enrollDate;
     @Column(name="member_role")
     private String memberRole;

@@ -1,6 +1,5 @@
 package com.ohgiraffers.section03.primarykey.subsection02.table;
 
-
 import org.junit.jupiter.api.*;
 
 import javax.persistence.EntityManager;
@@ -63,22 +62,12 @@ public class SequenceTableMappingTests {
         entityManager.persist(member2);
         entityTransaction.commit();
         //then
+        /* 사용하는 엔티티 객체를 기준으로 서술, FROM절에는 엔티티명, SELECT절에는 필드명 사용
+         * 엔티티명을 사용할 때 '반드시' 별칭을 작성해야 함
+         * memberNo (X) A.memberNO (O) */
         String jpql = "SELECT A.memberNo FROM member_section03_subsection02 A";
         List<Integer> memberNoList = entityManager.createQuery(jpql, Integer.class).getResultList();
+        // 데이터 타입은 Integer(받을 게 memberNo들 뿐이므로), 여러 개의 값 반환 = getResultList(), 하나의 값 반환 = getSingleResult()
         memberNoList.forEach(System.out::println);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

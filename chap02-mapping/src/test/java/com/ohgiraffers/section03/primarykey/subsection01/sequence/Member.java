@@ -6,15 +6,15 @@ import java.util.Date;
 @Entity(name="member_section03_subsection01")
 @Table(name="tbl_member_section03_subsection01")
 @SequenceGenerator(
-        name = "member_sequence_generator",     //식별자 생성기 이름
-        sequenceName = "SEQ_MEMBER_NO",         //데이터 베이스 시퀀스 객체명
-        initialValue = 5,                       //시퀀스 시작값 설정
-        allocationSize = 1                      //시퀀스 증가값 설정
-)
+        name = "member_sequence_generator", // 식별자 생성기 이름
+        sequenceName = "SEQ_MEMBER_NO",     // 데이터 베이스 시퀀스 객체명
+        initialValue = 5,                   //(초기값) 시퀀스 시작값 설정
+        allocationSize = 1                  // 시퀀스 증가값 설정
+) // 식별자 생성기를 만든거임
 public class Member {
     @Id
     @Column(name="member_no")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_sequence_generator")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_sequence_generator")  // 식별자 생성기 이름을 집어넣이 저거 사용하겠다라고 함
     private int memberNo;
     @Column(name="member_id")
     private String memberId;
