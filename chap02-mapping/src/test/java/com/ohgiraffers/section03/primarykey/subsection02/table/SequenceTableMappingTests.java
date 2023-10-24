@@ -1,7 +1,8 @@
-package com.ohgiraffers.section03.primarykey.subsection01.sequence;
+package com.ohgiraffers.section03.primarykey.subsection02.table;
 
 
 import org.junit.jupiter.api.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -9,7 +10,7 @@ import javax.persistence.Persistence;
 import java.util.Date;
 import java.util.List;
 
-public class PrimaryKeyMappingTests {
+public class SequenceTableMappingTests {
     private static EntityManagerFactory entityManagerFactory;
 
     private EntityManager entityManager;
@@ -62,7 +63,7 @@ public class PrimaryKeyMappingTests {
         entityManager.persist(member2);
         entityTransaction.commit();
         //then
-        String jpql = "SELECT A.memberNo FROM member_section03_subsection01 A";
+        String jpql = "SELECT A.memberNo FROM member_section03_subsection02 A";
         List<Integer> memberNoList = entityManager.createQuery(jpql, Integer.class).getResultList();
         memberNoList.forEach(System.out::println);
     }
